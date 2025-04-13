@@ -3,69 +3,165 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Awesome Pbbbaper Title</title>
+  <title> WildLive</title>
   <style>
     body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0; }
-    header { background: #3498db; color: white; text-align: center; padding: 40px 0; }
+    header {
+  background: linear-gradient(to bottom, #63b1f1, #0bf532);
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 40px 0;
+}
     header h1 { font-size: 3em; margin: 0; }
     header p { font-size: 1.2em; margin: 5px 0 30px 0; }
-    .content { padding: 20px; max-width: 900px; margin: 0 auto; background: white; border-radius: 8px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); }
-    .section { margin-bottom: 30px; }
-    h2 { color: #3498db; font-size: 1.6em; }
-    p { font-size: 18px; line-height: 1.6; color: #333; }
-    .abstract { font-style: italic; color: #555; }
-    .links a { padding: 10px 20px; background: #3498db; color: white; text-decoration: none; border-radius: 4px; }
+    .content { padding: 20px; max-width: 1500px; margin: 0 auto; background: white; border-radius: 8px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); }
+    .section { margin-bottom: 30px;margin-top: 30px }
+    h2 {  color: #178501; font-size: 2.5em; }
+    p { font-size:1.4em; line-height: 1.6;  color: #555454;}
+    /* p2 { font-size: 15px; line-height: 1.6; color: #333; } */
+    .abstract { font-size: 1.4em; font-style: italic; color: #555454; }
+    .links a { padding: 10px 20px; background: #1b17d8; color: white; text-decoration: none; border-radius: 4px; }
     .links a:hover { background: #2980b9; }
     footer { text-align: center; padding: 20px; background-color: #ecf0f1; font-size: 14px; }
+    .image-container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap; /* Allow images to wrap on smaller screens */
+    }
+
+    .image-container img {
+      height: 70vh;
+      width: auto;
+      object-fit: cover;
+    }
+
+    /* Media query for small screens (mobile) */
+    @media (max-width: 768px) {
+      .image-container {
+        flex-direction: column; /* Stack images vertically on small screens */
+        align-items: center; /* Center the images */
+      }
+
+      .image-container img {
+        height: 50vh; /* Reduce height on small screens */
+      }
+    }
+
   </style>
 </head>
-<body>
 
+<body>
+  <!-- <div style="position: relative; width: 100%; padding-top: 30%; overflow: hidden; margin: 0;">
+    <img src="title.png" alt="Cropped image"
+         style="position: absolute; top: -20%; left: 0; width: 100%; height: 80%; display: block;">
+  </div> -->
+  
   <!-- Header Section -->
-  <header>
-    <h1>Awesome aaaa Title</h1>
-    <p><strong>Authors:</strong> Your Name, Coauthor Assssssssssssss, Coauthor B</p>
-    <p><strong>Submitted to CVPR 2025</strong></p>
+  <header style="margin: 0; padding: 100px 0; color: rgb(0, 0, 0); text-align: center;">
+    <h1 style="margin: 0; font-size: 3em;">WildLive: Near Real-time Visual Wildlife Tracking onboard UAVs</h1>
+    <p style="margin: 5px 0 10px 0; font-size: 1.2em;">
+      <a href="https://research-information.bris.ac.uk/en/persons/dat-nguyen-ngoc" target="_blank">Nguyen Ngoc Dat</a>, 
+      <a href="https://www.bristol.ac.uk/people/person/Tom-Richardson-63e47259-1d08-4e30-9353-9b1b22e0f749/" target="_blank">Tom Richardson</a>, 
+      <a href="https://www.bristol.ac.uk/people/person/Matthew-Watson-41f9c67d-43b5-454d-9bd2-495bd9dd6ba6/" target="_blank">Matthew Watson</a>, 
+      <a href="https://research-information.bris.ac.uk/en/persons/kilian-meier" target="_blank">Kilian Meier</a>, 
+      <a href="https://scholar.google.com/citations?user=bhNDuigAAAAJ&hl=en" target="_blank">Jenna Marie Kline</a>, 
+      <a href="https://research-information.bris.ac.uk/en/persons/sid-reid" target="_blank">Sid Reid</a>, 
+      <a href="https://portal.findresearcher.sdu.dk/en/persons/guym" target="_blank">Guy Maalouf</a>, 
+      <a href="https://www.linkedin.com/in/duncan-hine-uas-usv/?originalSubdomain=uk" target="_blank">Duncan Hine</a>, 
+      <a href="https://www.bristol.ac.uk/people/person/Majid-Mirmehdi-93fe13c3-06b3-4797-a8fe-9fd6d2dc5dc2/" target="_blank">Majid Mirmehdi</a>, 
+      <a href="https://www.bristol.ac.uk/people/person/Tilo-Burghardt-70f598b4-d736-4ebe-b1e4-d0e8ba97aa2b/" target="_blank">Tilo Burghardt</a>
+    </p>
+    <p style="font-size: 15px; line-height: 1.6; color: #333;"> <em>University of Bristol, Ohio State University, University of Southern Denmark </em> </p>
+      <!-- Download Links Section -->
+    <div class="section links">
+      <p>
+        <a href="https://your-link-to-paper.com/paper.pdf" target="_blank">Github</a> |
+        <a href="https://your-link-to-bibtex.com/bibtex.bib" target="_blank">Dataset</a> |
+        <a href="https://your-link-to-bibtex.com/bibtex.bib" target="_blank">Arxiv</a>
+      </p>
+      </div>
   </header>
+
+  <div style="width: 100%; height: 45vh; text-align: center;margin-top: 40px;margin-bottom: 80px;">
+    <img src="zoomin.png" alt="Description of the image"
+         style="height:110%; width: 60%; display: inline-block;">
+  </div>
 
   <!-- Main Content Section -->
   <div class="content">
     <!-- Abstract Section -->
     <div class="section">
       <h2>Abstract</h2>
-      <p class="abstract">This is where the abstract of your paper goes. You can describe your paper’s contributions, approach, and key results in this section.</p>
+      <p class="abstract">Live tracking of wildlife via high-resolution video processing directly onboard drones is widely unexplored 
+        and most existing solutions rely on streaming video to ground stations to support navigation. Yet, both autonomous animal-reactive
+         flight control beyond visual line of sight and/or mission-specific individual and behaviour recognition tasks rely to some degree 
+         on this capability. In response, we introduce WildLive -- a near real-time animal detection and tracking framework for high-resolution 
+         imagery running directly onboard uncrewed aerial vehicles (UAVs). The system performs multi-animal detection and tracking at 17fps+ for HD 
+         and 7fps+ on 4K video streams suitable for operation during higher altitude flights to minimise animal disturbance. Our system is optimised for 
+         Jetson Orin AGX onboard hardware. It integrates the efficiency of sparse optical flow tracking and mission-specific sampling with device-optimised
+          and proven YOLO-driven object detection and segmentation techniques. Essentially, computational resource is focused onto spatio-temporal regions
+           of high uncertainty to significantly improve UAV processing speeds without domain-specific loss of accuracy. Alongside, we introduce our WildLive
+            dataset, which comprises 200k+ annotated animal instances across 19k+ frames from 4K UAV videos collected at the Ol Pejeta Conservancy in Kenya.
+             All frames contain ground truth bounding boxes, segmentation masks, as well as individual tracklets and tracking point trajectories.
+              We compare our system against current object tracking approaches including OC-SORT, ByteTrack, and SORT. Our multi-animal tracking 
+              experiments with onboard hardware confirm that near real-time high-resolution wildlife tracking is possible on UAVs whilst maintaining 
+              high accuracy levels as needed for future navigational and mission-specific animal-centric operational autonomy.
+         We publish all source code, weights, dataset, and labels for easy utilisation by the community.</p>
     </div>
 
     <!-- Introduction Section -->
     <div class="section">
-      <h2>Introduction</h2>
-      <p>Your introduction text goes here...</p>
-    </div>
+      <h2>The WildLive Benchmark Dataset</h2>
+      <p>Our dataset contains 215,800 bounding boxes and animal segmentation masks along its 291 zebra, giraffe,
+         and elephant tracklets, plus 84 point tracks across 22 UAV-acquired 4K video sequences,
+          totaling 19,139 frames recorded on site at the Ol Pejeta Conservancy in Kenya. 
+          Acquisition was conducted via DJI Mavic 3 Enterprise and Pro drones plus a custom-built quadcopter for wildlife missions.
+          Overall, the dataset provides verified animal bounding boxes and SAM2 segmentations,
+           tracklet IDs, as well as manually corrected, sparse LK pixel trajectories. </p>
 
+    
+    </div>
+    <div style="width: 100%; height: 45vh; text-align: center;margin-top: 40px;margin-bottom: 100px;">
+      <img src="merge2.png" alt="Description of the image"
+           style="height:110%; width: 60%; display: inline-block;">
+    </div>
     <!-- Method Section -->
     <div class="section">
-      <h2>Method</h2>
-      <p>Explain your methodology here...</p>
+      <h2>WildLive Method.</h2>
+      <p>Our WildLive framework is optimised for near real-time high-resolution video stream tracking onboard drones.
+         It integrates SAHI sampling and YOLO object detection with light-weight sparse optical flow LK tracking and 
+         YOLO instance segmentation to localise and follow animals live on UAV platforms.</p>
     </div>
-
+    <div class="image-container">
+      <img src="title.png" alt="Image 2">
+      <img src="result.png" alt="Image 1">
+    </div>
     <!-- Results Section -->
     <div class="section">
       <h2>Results</h2>
-      <p>Describe your experimental results and analysis...</p>
+      <p>Full results are shown in the above table and confirm order-of-magnitude gains in processing speed (up to 6.32fps) 
+        compared to other tested techniques resting on only intermittent re-detection bridged by computationally negligible LKP point tracking.
+         Accuracy, maybe surprisingly, slightly improves too, leading to best MOTA at 81.17% and IDF1 at 79.03%:
+          utilising PoA and IoU together for ambiguity resolution proves superior compared to IoU-centred full object tracking methods
+           tested which have no direct access to segmentation masks.</p>
+    </div>
+    <div class="section">
+      <h2>Citation</h2>
+      <p>Full results are shown in the above table and confirm order-of-magnitude gains in processing speed (up to 6.32fps) 
+        compared to other tested techniques resting on only intermittent re-detection bridged by computationally negligible LKP point tracking.
+         Accuracy, maybe surprisingly, slightly improves too, leading to best MOTA at 81.17% and IDF1 at 79.03%:
+          utilising PoA and IoU together for ambiguity resolution proves superior compared to IoU-centred full object tracking methods
+           tested which have no direct access to segmentation masks.</p>
     </div>
 
-    <!-- Download Links Section -->
-    <div class="section links">
-      <p>
-        <a href="https://your-link-to-paper.com/paper.pdf" target="_blank">Download PDF</a> | 
-        <a href="https://your-link-to-bibtex.com/bibtex.bib" target="_blank">Download BibTeX</a>
-      </p>
-    </div>
+
   </div>
 
   <!-- Footer Section -->
   <footer>
-    <p>© 2025 Your Name, Coauthors</p>
+    <p>© Maintained by Nguyen Ngoc Dat</p>
   </footer>
 
 </body>
