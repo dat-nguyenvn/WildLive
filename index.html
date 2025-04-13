@@ -25,9 +25,9 @@
     footer { text-align: center; padding: 20px; background-color: #ecf0f1; font-size: 14px; }
     .image-container {
       display: flex;
-      justify-content: space-around;
+      justify-content:space-between;;
       align-items: center;
-      gap: 15px;
+      gap: 20px;
       flex-wrap: wrap; /* Allow images to wrap on smaller screens */
     }
 
@@ -35,6 +35,7 @@
       height: 70vh;
       width: auto;
       object-fit: cover;
+      margin: 0 80px
     }
 
     /* Media query for small screens (mobile) */
@@ -45,7 +46,8 @@
       }
 
       .image-container img {
-        height: 50vh; /* Reduce height on small screens */
+        height: 50vh; 
+        
       }
     }
 
