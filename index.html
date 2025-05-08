@@ -82,6 +82,41 @@
     white-space: pre;
     font-size: 14px;
   }
+  .results-flex {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  margin-top: 20px;
+  flex-wrap: wrap; /* Responsive layout */
+  }
+
+  .results-text {
+    flex: 1 1 50%;
+  }
+
+  .results-image {
+    flex: 1 1 40%;
+    text-align: center;
+  }
+
+  .results-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  /* Responsive fallback */
+  @media (max-width: 768px) {
+    .results-flex {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .results-text, .results-image {
+      flex: 1 1 100%;
+      text-align: center;
+    }
+  }
 
   /* Media query for small screens */
   @media (max-width: 768px) {
@@ -165,8 +200,8 @@
         and most existing solutions rely on streaming video to ground stations to support navigation. Yet, both autonomous animal-reactive
          flight control beyond visual line of sight and/or mission-specific individual and behaviour recognition tasks rely to some degree 
          on this capability. In response, we introduce WildLive -- a near real-time animal detection and tracking framework for high-resolution 
-         imagery running directly onboard uncrewed aerial vehicles (UAVs). The system performs multi-animal detection and tracking at 17fps+ for HD 
-         and 7fps+ on 4K video streams suitable for operation during higher altitude flights to minimise animal disturbance. Our system is optimised for 
+         imagery running directly onboard uncrewed aerial vehicles (UAVs). The system performs multi-animal detection and tracking at 17.42 for HD 
+         and 7.53 on 4K video streams suitable for operation during higher altitude flights to minimise animal disturbance. Our system is optimised for 
          Jetson Orin AGX onboard hardware. It integrates the efficiency of sparse optical flow tracking and mission-specific sampling with device-optimised
           and proven YOLO-driven object detection and segmentation techniques. Essentially, computational resource is focused onto spatio-temporal regions
            of high uncertainty to significantly improve UAV processing speeds without domain-specific loss of accuracy. 
@@ -177,8 +212,7 @@
     <!-- Introduction Section -->
     <div class="section">
       <h2>The WildLive Benchmark Dataset (will be available soon)</h2>
-      <p>We introduce our WildLive dataset, which comprises 200k+ annotated animal instances across 19k+ frames from 4K UAV videos collected at the Ol Pejeta Conservancy in Kenya.
-         All frames contain ground truth bounding boxes, segmentation masks, as well as individual tracklets and tracking point trajectories.Our dataset contains 215,800 bounding boxes and animal segmentation masks along its 291 zebra, giraffe,
+      <p>Our dataset contains 215,800 bounding boxes and animal segmentation masks along its 291 zebra, giraffe,
          and elephant tracklets, plus 84 point tracks across 22 UAV-acquired 4K video sequences,
           totaling 19,139 frames recorded on site at the Ol Pejeta Conservancy in Kenya. 
           Acquisition was conducted via DJI Mavic 3 Enterprise and Pro drones plus a custom-built quadcopter for wildlife missions.
@@ -271,13 +305,26 @@
       <img src="result.png" alt="Image 1">
     </div>
     <!-- Results Section -->
+
     <div class="section">
       <h2>Results</h2>
-      <p>Full results are shown in the above table and confirm order-of-magnitude gains in processing speed (up to 6.32fps) 
-        compared to other tested techniques resting on only intermittent re-detection bridged by computationally negligible LKP point tracking.
-         Accuracy, maybe surprisingly, slightly improves too, leading to best MOTA at 81.17% and IDF1 at 79.03%:
-          utilising PoA and IoU together for ambiguity resolution proves superior compared to IoU-centred full object tracking methods
-           tested which have no direct access to segmentation masks.</p>
+      <div class="results-flex">
+        <!-- Left: Text -->
+        <div class="results-text">
+          <p style="font-size: 1.4em; color: #555454">
+            Full results are shown in the above table and confirm order-of-magnitude gains in processing speed (up to 6.32fps) 
+            compared to other tested techniques resting on only intermittent re-detection bridged by computationally negligible LKP point tracking.
+            Accuracy, maybe surprisingly, slightly improves too, leading to best MOTA at 81.17% and IDF1 at 79.03%:
+            utilising PoA and IoU together for ambiguity resolution proves superior compared to IoU-centred full object tracking methods
+            tested which have no direct access to segmentation masks.
+          </p>
+        </div>
+    
+        <!-- Right: Image -->
+        <div class="results-image">
+          <img src="speed.png" alt="Results visualization" />
+        </div>
+      </div>
     </div>
 
     <div style="width: 100%; text-align: center; margin-top: 40px;">
