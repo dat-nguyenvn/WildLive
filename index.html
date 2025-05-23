@@ -89,7 +89,7 @@
     .content { padding: 20px; max-width: 1500px; margin: 0 auto; background: white; border-radius: 8px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); }
     .section { margin-bottom: 30px;margin-top: 30px }
     h2 {  color: #178501; font-size: 2.5em; }
-    p { font-size:1.4em; line-height: 1.6;  color: #555454; text-align: justify;}
+    p { font-size:1.4em; line-height: 1.6;  color: #555454;}
     /* p2 { font-size: 15px; line-height: 1.6; color: #333; } */
     .abstract { font-size: 1.4em; font-style: italic; color: #555454; text-align: justify;}
     .links a { padding: 10px 20px; background: #1b17d8; color: white; text-decoration: none; border-radius: 4px; }
@@ -318,7 +318,7 @@
     <!-- Introduction Section -->
     <div class="section">
       <h2>The WildLive Benchmark Dataset (will be available soon)</h2>
-      <p>Our dataset contains 215,800 bounding boxes and animal segmentation masks along its 291 zebra, giraffe,
+      <p style="text-align: justify;">Our dataset contains 215,800 bounding boxes and animal segmentation masks along its 291 zebra, giraffe,
          and elephant tracklets, plus 84 point tracks across 22 UAV-acquired 4K video sequences,
           totaling 19,139 frames recorded on site at the Ol Pejeta Conservancy in Kenya. 
           Acquisition was conducted via DJI Mavic 3 Enterprise and Pro drones plus a custom-built quadcopter for wildlife missions.
@@ -404,7 +404,7 @@
 
     <div class="section">
       <h2>WildLive Method.</h2>
-      <p>
+      <p style="text-align: justify;">
         
           Our WildLive framework is optimised for near real-time high-resolution video stream tracking onboard drones.
           It integrates SAHI sampling and YOLO object detection with light-weight sparse optical flow LK tracking and 
@@ -424,7 +424,7 @@
 
     <div class="section">
       <h2>WildLive Method.</h2>
-      <p>
+      <p style="text-align: justify;">
         
         Full results are shown in the above table and confirm order-of-magnitude gains in processing speed (up to 6.32fps) 
         compared to other tested techniques resting on only intermittent re-detection bridged by computationally negligible LKP point tracking.
