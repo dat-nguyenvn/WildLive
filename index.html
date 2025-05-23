@@ -28,7 +28,7 @@
       /* justify-content:space-between; */
       justify-content:center;
       align-items: center;
-      gap: 20px;
+      gap: 10px;
       flex-wrap: wrap; /* Allow images to wrap on smaller screens */
     }
 
@@ -36,7 +36,22 @@
       height: 70vh;
       width: auto;
       object-fit: cover;
-      margin: 0 80px
+      margin: 0 50px
+    }
+    .image-container2 {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .image-container2 img {
+      max-height: 500px;
+      width: auto;
+      object-fit: contain;
+      margin: 0 20px;
     }
 
     /* Media query for small screens (mobile) */
@@ -49,6 +64,14 @@
       .image-container img {
         height: 50vh; 
         
+      }
+      .image-container2 {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .image-container2 img {
+        max-height: 200px;
       }
     }
     .side-by-side {
@@ -161,18 +184,6 @@
       <a href="https://www.bristol.ac.uk/people/person/Majid-Mirmehdi-93fe13c3-06b3-4797-a8fe-9fd6d2dc5dc2/" target="_blank">Majid Mirmehdi</a>, 
       <a href="https://www.bristol.ac.uk/people/person/Tilo-Burghardt-70f598b4-d736-4ebe-b1e4-d0e8ba97aa2b/" target="_blank">Tilo Burghardt</a>
     </p>
-    <!-- <p style="margin: 5px 0 10px 0; font-size: 1.2em;">
-      <a href="https://your-link-to-paper.com/paper.pdf" target="_blank">Nguyen Ngoc Dat</a>, 
-      <a href="https://your-link-to-paper.com/paper.pdf" target="_blank">Tom Richardson</a>, 
-      <a href="https://your-link-to-paper.com/paper.pdf" target="_blank">Matthew Watson</a>, 
-      <a href="https://your-link-to-paper.com/paper.pdf" target="_blank">Kilian Meier</a>, 
-      <a href="https://your-link-to-paper.com/paper.pdf" target="_blank">Jenna Marie Kline</a>, 
-      <a href="https://your-link-to-paper.com/paper.pdf" target="_blank">Sid Reid</a>, 
-      <a href="https://your-link-to-paper.com/paper.pdf" target="_blank">Guy Maalouf</a>, 
-      <a href="https://your-link-to-paper.com/paper.pdf" target="_blank">Duncan Hine</a>, 
-      <a href="https://your-link-to-paper.com/paper.pdf" target="_blank">Majid Mirmehdi</a>, 
-      <a href="https://your-link-to-paper.com/paper.pdf" target="_blank">Tilo Burghardt</a>
-    </p> -->
 
     <p style="font-size: 1.5em; line-height: 1.6; color: #333;"> <em>University of Bristol, Ohio State University, University of Southern Denmark </em> </p>
       <!-- Download Links Section -->
@@ -189,6 +200,7 @@
   <div style="width: 100%; height: 45vh; text-align: center;margin-top: 40px;margin-bottom: 80px;">
     <img src="zoomin.png" alt="Description of the image"
          style="height:110%; width: 60%; display: inline-block;">
+
   </div>
 
   <!-- Main Content Section -->
@@ -196,17 +208,39 @@
     <!-- Abstract Section -->
     <div class="section">
       <h2>Abstract</h2>
-      <p class="abstract"> <b>Live tracking of wildlife via high-resolution video processing directly onboard drones is widely unexplored 
-        and most existing solutions rely on streaming video to ground stations to support navigation. Yet, both autonomous animal-reactive
-         flight control beyond visual line of sight and/or mission-specific individual and behaviour recognition tasks rely to some degree 
-         on this capability. In response, we introduce WildLive -- a near real-time animal detection and tracking framework for high-resolution 
-         imagery running directly onboard uncrewed aerial vehicles (UAVs). The system performs multi-animal detection and tracking at 17.42 for HD 
-         and 7.53 on 4K video streams suitable for operation during higher altitude flights to minimise animal disturbance. Our system is optimised for 
-         Jetson Orin AGX onboard hardware. It integrates the efficiency of sparse optical flow tracking and mission-specific sampling with device-optimised
-          and proven YOLO-driven object detection and segmentation techniques. Essentially, computational resource is focused onto spatio-temporal regions
-           of high uncertainty to significantly improve UAV processing speeds without domain-specific loss of accuracy. 
-              
-         We publish all source code, weights, dataset, and labels for easy utilisation by the community.</b></p>
+      <p class="abstract"> <b>Live tracking of wildlife via high-resolution video process-
+        ing directly onboard drones is widely unexplored and most
+        existing solutions rely on streaming video to ground sta-
+        tions to support navigation. Yet, both autonomous animal-
+        reactive flight control beyond visual line of sight and/or
+        mission-specific individual and behaviour recognition tasks
+        rely to some degree on this capability. In response, we in-
+        troduce WildLive – a near real-time animal detection and
+        tracking framework for high-resolution imagery running
+        directly onboard uncrewed aerial vehicles (UAVs). The
+        system performs multi-animal detection and tracking at
+        17.81 fps for HD and 7.53 fps on 4K video streams suit-
+        able for operation during higher altitude flights to minimise
+        animal disturbance. Our system is optimised for Jetson
+        Orin AGX onboard hardware. It integrates the efficiency of
+        sparse optical flow tracking and mission-specific sampling
+        with device-optimised and proven YOLO-driven object de-
+        tection and segmentation techniques. Essentially, compu-
+        tational resource is focused onto spatio-temporal regions
+        of high uncertainty to significantly improve UAV process-
+        ing speeds. Alongside, we introduce our WildLive dataset,
+        which comprises 200K+ annotated animal instances across
+        19K+ frames from 4K UAV videos collected at the Ol Pe-
+        jeta Conservancy in Kenya. All frames contain ground truth
+        bounding boxes, segmentation masks, as well as individ-
+        ual tracklets and tracking point trajectories. We compare
+        our system against current object tracking approaches in-
+        cluding OC-SORT, ByteTrack, and SORT. Our multi-animal
+        tracking experiments with onboard hardware confirm that
+        near real-time high-resolution wildlife tracking is possible
+        on UAVs whilst maintaining high accuracy levels as needed
+        for future navigational and mission-specific animal-centric
+        operational autonomy.</b></p>
     </div>
 
     <!-- Introduction Section -->
@@ -286,6 +320,16 @@
       </div>
     </div> -->
     <!-- Method Section -->
+    <div style="width: 100%; text-align: center; margin-top: 40px;">
+      <video autoplay muted loop playsinline style="width: 80%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+        <source src="sample_annotation.mp4" type="video/mp4">
+
+      </video>
+      <p style="margin-top: 20px; font-size: 1.2em; color: #555454;">
+        WildLive annotation sample: includes boxes, ID, masks and subset point trajectories.
+      </p>
+    </div>
+
     <div class="section">
       <h2>WildLive Method.</h2>
       <p>
@@ -307,43 +351,49 @@
     <!-- Results Section -->
 
     <div class="section">
-      <h2>Results</h2>
-      <div class="results-flex">
-        <!-- Left: Text -->
-        <div class="results-text">
-          <p style="font-size: 1.4em; color: #555454">
-            Full results are shown in the above table and confirm order-of-magnitude gains in processing speed (up to 6.32fps) 
-            compared to other tested techniques resting on only intermittent re-detection bridged by computationally negligible LKP point tracking.
-            Accuracy, maybe surprisingly, slightly improves too, leading to best MOTA at 81.17% and IDF1 at 79.03%:
-            utilising PoA and IoU together for ambiguity resolution proves superior compared to IoU-centred full object tracking methods
-            tested which have no direct access to segmentation masks.
-          </p>
-        </div>
-    
-        <!-- Right: Image -->
-        <div class="results-image">
-          <img src="speed.png" alt="Results visualization" />
-        </div>
-      </div>
+      <h2>WildLive Method.</h2>
+      <p>
+        
+        Full results are shown in the above table and confirm order-of-magnitude gains in processing speed (up to 6.32fps) 
+        compared to other tested techniques resting on only intermittent re-detection bridged by computationally negligible LKP point tracking.
+        Accuracy, maybe surprisingly, slightly improves too, leading to best MOTA at 81.17% and IDF1 at 79.03%:
+        utilising PoA and IoU together for ambiguity resolution proves superior compared to IoU-centred full object tracking methods
+        tested which have no direct access to segmentation masks.
+      </p>
     </div>
 
+
+
+    <div class="image-container2">
+      <img src="hdexp.png" alt="Image 2">
+      <img src="speed.png" alt="Image 1">
+    </div>
     <div style="width: 100%; text-align: center; margin-top: 40px;">
       <video autoplay muted loop playsinline style="width: 80%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
         <source src="demo1_com.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
+      <p style="margin-top: 20px; font-size: 1.2em; color: #555454;">
+        WildLive output sample 1
+      </p>
     </div>
     <div style="width: 100%; text-align: center; margin-top: 40px;">
       <video autoplay muted loop playsinline style="width: 80%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
         <source src="demo2_com.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
+      <p style="margin-top: 20px; font-size: 1.2em; color: #555454;">
+        WildLive output sample 2
+      </p>
     </div>
     <div style="width: 100%; text-align: center; margin-top: 40px;">
       <video autoplay muted loop playsinline style="width: 80%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
         <source src="demo3_com.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
+      <p style="margin-top: 20px; font-size: 1.2em; color: #555454;">
+        WildLive output sample 3
+      </p>
     </div>
 
     <div class="section">
