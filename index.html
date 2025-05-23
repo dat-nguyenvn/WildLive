@@ -7,13 +7,85 @@
   <style>
     body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0; }
     header {
-  background: linear-gradient(to bottom, #63b1f1, #0bf532);
-  color: rgb(255, 255, 255);
-  text-align: center;
-  padding: 40px 0;
-}
-    header h1 { font-size: 3em; margin: 0; }
-    header p { font-size: 1.2em; margin: 5px 0 30px 0; }
+      background: linear-gradient(135deg, #63b1f1 0%, #0bf532 100%);
+      color: #fff;
+      text-align: center;
+      padding: 80px 20px;
+      box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url('https://www.transparenttextures.com/patterns/asfalt-light.png') repeat;
+      opacity: 0.15;
+      pointer-events: none;
+      z-index: 1;
+    }
+    header h1 {
+      font-size: 4.5rem;
+      font-weight: 700;
+      margin: 0 0 20px 0;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 2;
+      line-height: 1.2;
+    }  
+    header p {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin: 0 0 30px 0;
+      position: relative;
+      z-index: 2;
+      line-height: 1.4;
+    }  
+    header p a:hover {
+      color: #e0ffdd;
+    }
+    .section.links p {
+      margin: 0;
+      position: relative;
+      z-index: 2;
+    }
+    .section.links a {
+      background: #006622;
+      padding: 10px 18px;
+      margin: 0 8px;
+      border-radius: 25px;
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s ease;
+      display: inline-block;
+    }
+    .section.links a:hover {
+      background: #090df1;
+    }
+    .group-top a {
+      font-size: 1.2em;           /* Bigger font size */
+      color: #ffffff;             /* Bright blue color */
+      font-weight:600;           /* Semi-bold */
+      text-decoration: underline;      /* Remove underline */
+      margin-right: 12px;
+    }
+    .group-top a:hover {
+      color: #090df1;
+      text-decoration: underline; /* Underline on hover */
+    }
+
+    .group-bottom a {
+      font-size: 1.1em;             /* Smaller font size */
+      color: #ffffff;             /* Grayish color */
+      font-weight: 500;           /* Normal weight */
+      text-decoration: none; /* Keep underline */
+      margin-right: 10px;
+    }
+    .group-bottom a:hover {
+      text-decoration: underline;
+      color: #090df1;             /* Change color on hover */
+    }    
     .content { padding: 20px; max-width: 1500px; margin: 0 auto; background: white; border-radius: 8px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); }
     .section { margin-bottom: 30px;margin-top: 30px }
     h2 {  color: #178501; font-size: 2.5em; }
@@ -143,6 +215,18 @@
 
   /* Media query for small screens */
   @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+      .section.links a {
+        margin: 6px 4px;
+        padding: 8px 14px;
+      }
+    }
+  @media (max-width: 768px) {
     .side-by-side {
       flex-direction: column;
       align-items: center;
@@ -169,10 +253,9 @@
   </div> -->
   
   <!-- Header Section -->
-  <header style="margin: 0; padding: 100px 0; color: rgb(0, 0, 0); text-align: center;">
-    <h1 style="margin: 0; font-size: 4em;">WildLive: Near Real-time Visual Wildlife Tracking onboard UAVs</h1>
-    
-    <p style="margin: 10px 0 10px 0; font-size: 1.5em;">
+  <header>
+    <h1>WildLive: Near Real-time Visual Wildlife Tracking onboard UAVs</h1>
+    <p class="group-top">
       <a href="https://research-information.bris.ac.uk/en/persons/dat-nguyen-ngoc" target="_blank">Nguyen Ngoc Dat</a>, 
       <a href="https://www.bristol.ac.uk/people/person/Tom-Richardson-63e47259-1d08-4e30-9353-9b1b22e0f749/" target="_blank">Tom Richardson</a>, 
       <a href="https://www.bristol.ac.uk/people/person/Matthew-Watson-41f9c67d-43b5-454d-9bd2-495bd9dd6ba6/" target="_blank">Matthew Watson</a>, 
@@ -185,17 +268,22 @@
       <a href="https://www.bristol.ac.uk/people/person/Tilo-Burghardt-70f598b4-d736-4ebe-b1e4-d0e8ba97aa2b/" target="_blank">Tilo Burghardt</a>
     </p>
 
-    <p style="font-size: 1.5em; line-height: 1.6; color: #333;"> <em>University of Bristol, Ohio State University, University of Southern Denmark </em> </p>
-      <!-- Download Links Section -->
-      <div class="section links">
-        <p>
-          <a href="https://github.com/dat-nguyenvn/DC12" target="_blank">Github (Coming soon)</a> |
-          <a href="https://your-link-to-bibtex.com/bibtex.bib" target="_blank">Dataset (Coming soon)</a> |
-          <a href="https://arxiv.org/abs/2504.10165" target="_blank">Arxiv</a> |
-          <a href="wildlive.pdf" download>Download PDF</a>
-        </p>
-      </div>
+    <p class="group-bottom">
+      <a href="https://www.bristol.ac.uk/" target="_blank">University of Bristol, UK</a>, 
+      <a href="https://www.osu.edu/" target="_blank">Ohio State University, USA</a>, 
+      <a href="https://www.sdu.dk/en" target="_blank">University of Southern Denmark, Denmark</a>
+    </p>
+
+    <div class="section links">
+      <p>
+        <a href="https://github.com/dat-nguyenvn/DC12" target="_blank">Github (Coming soon)</a> |
+        <a href="https://your-link-to-bibtex.com/bibtex.bib" target="_blank">Dataset (Coming soon)</a> |
+        <a href="https://arxiv.org/abs/2504.10165" target="_blank">Arxiv</a> |
+        <a href="wildlive.pdf" download>Download PDF</a>
+      </p>
+    </div>
   </header>
+
 
   <div style="width: 100%; height: 45vh; text-align: center;margin-top: 40px;margin-bottom: 80px;">
     <img src="zoomin.png" alt="Description of the image"
